@@ -18,9 +18,9 @@ public class LevelHandler {
     public String getProgressBar(int length) {
         int forNextLevel = (int) Math.round(this.getPercentageToNextLevel() * (double) length);
         StringBuilder builder = new StringBuilder();
-        String barSymbol = "\u2503";
-        String unlockedColor = "\u00a7a";
-        String lockedColor = "\u00a7c";
+        String barSymbol = "┃";
+        String unlockedColor = "§a";
+        String lockedColor = "§c";
         for (int i = 0; i < length; ++i) {
             builder.append(i < forNextLevel ? unlockedColor + barSymbol : lockedColor + barSymbol);
         }

@@ -3,10 +3,10 @@ package me.ilovelean.mobcraft.stats;
 import org.bukkit.Material;
 
 public enum AttributeType {
-    STRENGTH(Material.GOLDEN_SWORD, "\u00a7cEr\u0151"),
-    DEXTERITY(Material.BOW, "\u00a7a\u00dcgyess\u00e9g"),
-    INTELLIGENCE(Material.PRISMARINE_SHARD, "\u00a7bIntelligencia"),
-    TOUGHNESS(Material.IRON_CHESTPLATE, "\u00a77Ellen\u00e1ll\u00e1s");
+    STRENGTH(Material.GOLDEN_SWORD, "§cErő"),
+    DEXTERITY(Material.BOW, "§aÜgyesség"),
+    INTELLIGENCE(Material.PRISMARINE_SHARD, "§bIntelligencia"),
+    TOUGHNESS(Material.IRON_CHESTPLATE, "§7Ellenállás");
 
     private final Material material;
     private final String name;

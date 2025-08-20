@@ -61,7 +61,7 @@ public class BossListener
             double moneyRoll = Math.random() * 100.0;
             double money = mobData.getMoneyChance() < moneyRoll ? 0.0 : mobData.getMoney() * Math.min(1.0, damage / maxHealth);
             MobCraft.getInstance().getEcon().depositPlayer(player, money);
-            Component component = ComponentBuilder.of().append(money > 0.0 ? ComponentBuilder.of().text("%.1f".formatted(money) + " \u26c3").color(NamedTextColor.GOLD).build() : Component.empty()).append(exp > 0L && money > 0.0 ? ComponentBuilder.of().text(" | ").color(NamedTextColor.DARK_GRAY).build() : Component.empty()).append(exp > 0L ? ComponentBuilder.of().text(exp + " XP").color(NamedTextColor.LIGHT_PURPLE).build() : Component.empty()).build();
+            Component component = ComponentBuilder.of().append(money > 0.0 ? ComponentBuilder.of().text("%.1f".formatted(money) + " ⛃").color(NamedTextColor.GOLD).build() : Component.empty()).append(exp > 0L && money > 0.0 ? ComponentBuilder.of().text(" | ").color(NamedTextColor.DARK_GRAY).build() : Component.empty()).append(exp > 0L ? ComponentBuilder.of().text(exp + " XP").color(NamedTextColor.LIGHT_PURPLE).build() : Component.empty()).build();
             player.sendActionBar(component);
         });
         this.mobDamages.remove(mobUUID);
@@ -124,9 +124,9 @@ public class BossListener
             int health = (int) mob.getEntity().getHealth();
             double damagePercentage = this.mobDamages.get(mobUUID).get(playerUUID) / (double) maxHealth * 100.0;
             double percentage = (double) health / (double) maxHealth;
-            String string = percentage < 0.1 ? "\u00a74" : (percentage < 0.25 ? "\u00a7c" : (percentage < 0.5 ? "\u00a76" : (percentage < 0.75 ? "\u00a7e" : "\u00a7a")));
+            String string = percentage < 0.1 ? "§4" : (percentage < 0.25 ? "§c" : (percentage < 0.5 ? "§6" : (percentage < 0.75 ? "§e" : "§a")));
             String mobName = mob.getType().getConfig().getString("display-name");
-            player.sendActionBar(IridiumColorAPI.process(mobName) + " \u00a78- " + string + health + " \u00a7c\u2764 \u00a78(\u00a7c%.2f".formatted(damagePercentage) + "% \ud83d\udde1\u00a78)");
+            player.sendActionBar(IridiumColorAPI.process(mobName) + " §8- " + string + health + " §c❤ §8(§c%.2f".formatted(damagePercentage) + "% ⚔§8)");
         }, 1L);
     }
 }

@@ -105,8 +105,8 @@ public class HologramManager
         int maxHealth;
         int health = (int) abstractEntity.getHealth();
         double percentage = (double) health / (double) (maxHealth = (int) abstractEntity.getMaxHealth());
-        String string = percentage < 0.1 ? "\u00a74" : (percentage < 0.25 ? "\u00a7c" : (percentage < 0.5 ? "\u00a76" : (percentage < 0.75 ? "\u00a7e" : "\u00a7a")));
-        return string + health + "\u00a7f/\u00a7a" + maxHealth + " \u00a7c\u2764";
+        String string = percentage < 0.1 ? "§4" : (percentage < 0.25 ? "§c" : (percentage < 0.5 ? "§6" : (percentage < 0.75 ? "§e" : "§a")));
+        return string + health + "§f/§a" + maxHealth + " §c❤";
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)

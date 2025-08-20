@@ -2,9 +2,7 @@ package me.ilovelean.mobcraft.listeners;
 
 import me.ilovelean.mobcraft.profile.ProfileManager;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
-import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -70,10 +68,10 @@ public class PlayerListener
             event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.ITEM_TOTEM_USE, 0.025f, 0.5f);
             event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.05f, 0.1f);
             event.getPlayer().sendMessage("");
-            event.getPlayer().sendMessage("\u00a75\u00a7lSZINTL\u00c9P\u00c9S \u00a7a\u2191");
-            event.getPlayer().sendMessage("\u00a78\u27a5 \u00a77El\u00e9rted a \u00a7e" + newLevel + ". \u00a77szintet.");
-            event.getPlayer().sendMessage("\u00a76Jutalmak:");
-            event.getPlayer().sendMessage("\u00a7a[+] 3 K\u00e9pess\u00e9g Pont");
+            event.getPlayer().sendMessage("§5§lSZINTLÉPÉS §a↑");
+            event.getPlayer().sendMessage("§8➥ §7Elérted a §e" + newLevel + ". §7szintet.");
+            event.getPlayer().sendMessage("§6Jutalmak:");
+            event.getPlayer().sendMessage("§a[+] 3 Képesség Pont");
             event.getPlayer().sendMessage("");
         }
     }

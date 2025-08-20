@@ -58,7 +58,7 @@ public class Profile {
             for (Map.Entry<Integer, ItemStack> entry : remainingItems.entrySet()) {
                 this.mailItems.add(ItemSerializer.encodeItem(entry.getValue()));
             }
-            Component component = Component.text("Nincs el\u00e9g helyed hogy megkapd ezt a t\u00e1rgyat!").color(NamedTextColor.RED).appendNewline().append(Component.text(" [Men\u00fc megnyit\u00e1sa]").color(NamedTextColor.AQUA).clickEvent(ClickEvent.runCommand("/mail")));
+            Component component = Component.text("Nincs elég helyed hogy megkapd ezt a tárgyat!").color(NamedTextColor.RED).appendNewline().append(Component.text(" [Menü megnyitása]").color(NamedTextColor.AQUA).clickEvent(ClickEvent.runCommand("/mail")));
             player.sendMessage(component);
         }
     }

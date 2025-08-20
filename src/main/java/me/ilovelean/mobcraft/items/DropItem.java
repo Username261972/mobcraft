@@ -12,7 +12,6 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class DropItem {
@@ -59,7 +58,7 @@ public class DropItem {
             }
             itemStack.setAmount(amount);
             ProfileManager.get().getProfile(player.getUniqueId()).giveOrMailItem(itemStack);
-            player.sendMessage("\u00a78 - \u00a77" + this.getDisplayName(itemStack) + " \u00a7ex" + amount);
+            player.sendMessage("§8 - §7" + this.getDisplayName(itemStack) + " §ex" + amount);
             NBTItem nbtItem = NBTItem.get(itemStack);
             ItemTier itemTier = ItemTier.ofItem(nbtItem);
             if (itemTier != null) {
@@ -70,7 +69,7 @@ public class DropItem {
                 if (tierId.equalsIgnoreCase(ancientRelicId)) {
                     String itemName = this.getDisplayName(itemStack);
                     String playerName = player.getName();
-                    final String broadcastMessageAncientRelic = IridiumColorAPI.process("<SOLID:CC704E>&l" + playerName + "&r<SOLID:CC704E> megszerzett egy &lAncient Relic&r<SOLID:CC704E> t\u00e1rgyat: " + itemName + ", " + "%.2f".formatted(damagePercentage) + "% sebz\u00e9ssel.");
+                    final String broadcastMessageAncientRelic = IridiumColorAPI.process("<SOLID:CC704E>&l" + playerName + "&r<SOLID:CC704E> megszerzett egy &lAncient Relic&r<SOLID:CC704E> tárgyat: " + itemName + ", " + "%.2f".formatted(damagePercentage) + "% sebzéssel.");
                     TotemAnimationUtil.showTotemAnimation(player, 10001);
                     new BukkitRunnable() {
 
@@ -81,7 +80,7 @@ public class DropItem {
                 } else if (tierId.equalsIgnoreCase(mythicalId)) {
                     String itemName = this.getDisplayName(itemStack);
                     String playerName = player.getName();
-                    final String broadcastMessageMythical = IridiumColorAPI.process("<SOLID:B22121>&l" + playerName + "&r<SOLID:B22121> megszerzett egy &lMythical&r<SOLID:B22121> t\u00e1rgyat: " + itemName + ", " + "%.2f".formatted(damagePercentage) + "% sebz\u00e9ssel.");
+                    final String broadcastMessageMythical = IridiumColorAPI.process("<SOLID:B22121>&l" + playerName + "&r<SOLID:B22121> megszerzett egy &lMythical&r<SOLID:B22121> tárgyat: " + itemName + ", " + "%.2f".formatted(damagePercentage) + "% sebzéssel.");
                     TotemAnimationUtil.showTotemAnimation(player, 10002);
                     new BukkitRunnable() {
 

@@ -16,13 +16,13 @@ import org.bukkit.inventory.ItemStack;
 
 public class MailMenu
     extends Gui {
-    private final Icon previousPageIcon = new Icon(Material.ARROW).setName("\u00a76El\u0151z\u0151 Oldal");
-    private final Icon nextPageIcon = new Icon(Material.ARROW).setName("\u00a76K\u00f6vetkez\u0151 Oldal");
+    private final Icon previousPageIcon = new Icon(Material.ARROW).setName("§6Előző Oldal");
+    private final Icon nextPageIcon = new Icon(Material.ARROW).setName("§6Következő Oldal");
     private final PaginationManager pagination = new PaginationManager(this);
     private final Player target;
 
     public MailMenu(Player player, Player target) {
-        super(player, "mail", "Tal\u00e1lt t\u00e1rgyak", 6);
+        super(player, "mail", "Talált tárgyak", 6);
         this.target = target;
         this.pagination.registerPageSlotsBetween(0, 44);
     }
@@ -40,18 +40,18 @@ public class MailMenu
             profile.getMailItems().forEach(item -> {
                 ItemStack itemStack = ItemSerializer.decodeItem(item);
                 Icon icon = new Icon(itemStack.clone());
-                icon.appendLore("", "\u00a7eKatt a t\u00e1rgy lek\u00e9r\u00e9s\u00e9hez.");
+                icon.appendLore("", "§eKatt a tárgy lekéréséhez.");
                 icon.onClick((InventoryClickEvent e) -> {
                     if (!profile.getMailItems().contains(item)) {
                         this.player.sendMessage(IridiumColorAPI.process("<RAINBOW1>faggot</RAINBOW>"));
                         return;
                     }
                     if (this.player.getInventory().firstEmpty() == -1) {
-                        this.player.sendMessage("\u00a7cNincs szabad helyed a t\u00e1rgyhoz!");
+                        this.player.sendMessage("§cNincs szabad helyed a tárgyhoz!");
                         return;
                     }
                     this.player.getInventory().addItem(itemStack.clone());
-                    this.player.sendMessage("\u00a7eLek\u00e9rted \u00a7b" + itemStack.getItemMeta().getDisplayName() + "\u00a7e t\u00e1rgyat!");
+                    this.player.sendMessage("§eLekérted §b" + itemStack.getItemMeta().getDisplayName() + "§e tárgyat!");
                     this.player.playSound(this.player.getLocation(), Sound.UI_BUTTON_CLICK, 0.5f, 1.0f);
                     profile.getMailItems().remove(item);
                     this.open();
